@@ -3,8 +3,19 @@ package game;
 
 
 public abstract class Spirit{
-protected String name = this.getClass().getSimpleName();
+protected String name;
+protected int index;
+protected int level;
+  
+protected int maxHealth;
 protected int health;
-protected
+protected int damage;
+protected int defense;
+
+protected double height;
+protected double weight;
+protected double size;
+
+protected Personality personality;
 
 }
