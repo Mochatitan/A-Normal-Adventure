@@ -60,9 +60,8 @@ level++;
 private void loadVariables(){
 loadExpRequirement();
 loadInformation();
-  
-
 }
+  
 private void loadExpRequirement(){
 //expRequirement = new ArrayList<int>(Arrays.asList(0,2,3,4,4,5,7,));
 private double xpReq = 1;
@@ -75,7 +74,9 @@ private void loadInformation(){
 this.name = this.getClass().getSimpleName();
 }
   
+private void randomizeStats(){
 
+}
 
 
 }
