@@ -17,5 +17,19 @@ protected double weight;
 protected double size;
 
 protected Personality personality;
+  
+
+  
+  
+//getters and setters
+public String getName(){
+return name;
+}
+public int getIndex(){
+  return index;
+}
+public int getLevel(){
+return level;
+}
 
 }
