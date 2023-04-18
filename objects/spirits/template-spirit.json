@@ -1,1 +1,15 @@
-
+{
+  "name": "ethiepoo",
+  "description": "this capitalist is a spirit which appears to take on the form of an 8th grade nerd. Low attack due to not drinking enough milk as a child. Will lie about drinking milk, do not trust it.
+  "ID": 0,
+  "type1": "gold",
+  "type2": "none",
+  "evolves": "none",
+  "evolvesFrom": "none",
+  
+  "attack": 5,
+  "health": 23,
+  "defense": 5
+  
+  
+}
