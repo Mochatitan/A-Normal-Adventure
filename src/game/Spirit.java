@@ -72,7 +72,7 @@ xpReq += x;
 }
 }
 private void loadInformation(){
-this.name = this.getClass().getName();
+this.name = this.getClass().getSimpleName();
 }
   
 
