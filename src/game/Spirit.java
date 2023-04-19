@@ -23,7 +23,7 @@ protected Personality personality;
 protected int level;
 protected double totalExp;
 protected double exp;
-protected ArrayList<double> expRequirements = new ArrayList<double>();
+protected ArrayList<Double> expRequirements = new ArrayList<Double>();
   
   
 public Spirit(){
@@ -54,6 +54,7 @@ while(exp > expRequirements.get(level)){
 exp -= expRequirements.get(level);
 level++;
 }
+return level;
 }
 
 //loaders
