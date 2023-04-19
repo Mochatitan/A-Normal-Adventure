@@ -3,6 +3,7 @@ package game;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Save {
     public void test(){
