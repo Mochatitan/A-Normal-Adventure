@@ -39,4 +39,7 @@ public class Save {
         System.out.println(saveData.get("level"));
         System.out.println(saveData.get("exp"));
     }
+    public HashMap<String, String> getSaveData(){
+        return saveData;
+    }
 }
