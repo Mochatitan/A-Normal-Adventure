@@ -23,10 +23,10 @@ protected Personality personality;
 protected int level;
 protected double totalExp;
 protected double exp;
-protected ArrayList<double> expRequirement = new ArrayList<double>();
+protected ArrayList<double> expRequirements = new ArrayList<double>();
   
   
-public Pokemon(){
+public Spirit(){
 loadVariables();
 }
   
@@ -64,12 +64,13 @@ loadInformation();
   
 private void loadExpRequirement(){
 //expRequirement = new ArrayList<int>(Arrays.asList(0,2,3,4,4,5,7,));
-private double xpReq = 1;
+double xpReq = 1;
 for(double x = 0; x < 98;x+=0.5){
-expRequirement.add(xpReq);
+expRequirements.add(xpReq);
 xpReq += x;
 }
 }
+
 private void loadInformation(){
 this.name = this.getClass().getSimpleName();
 }
