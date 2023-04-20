@@ -8,21 +8,22 @@ import java.util.ArrayList;
 
 public class Save {
     //money, level, exp
-    HashMap<String, String> saveData = new HashMap<String, String>();
-    ArrayList<String> lineList = new ArrayList<String>();
+    static HashMap<String, String> saveData = new HashMap<String, String>();
+    static ArrayList<String> lineList = new ArrayList<String>();
 
+    private static File file = new File("../data/save/Save.txt");
     // saveData.put("this","isthis");
     
-    public void test(){
-        File file = new File("/workspaces/A-Normal-Adventure/data/save/Save.txt");
-        
+    private static void load(){
+        Save.saveData.clear();
+        Save.lineList.clear();
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                lineList.add(line);
+                Save.lineList.add(line);
             }
-            for(String s : lineList){
+            for(String s : Save.lineList){
                 System.out.println(s);
             }
             System.out.println("");
@@ -30,16 +31,17 @@ public class Save {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        for(String str : lineList){
+        for(String str : Save.lineList){
             String[] arrOfStr = str.split(":", 2);
             saveData.put(arrOfStr[0],arrOfStr[1]);
         }
 
-        System.out.println(saveData.get("money"));
-        System.out.println(saveData.get("level"));
-        System.out.println(saveData.get("exp"));
+        System.out.println(Save.saveData.get("money"));
+        System.out.println(Save.saveData.get("level"));
+        System.out.println(Save.saveData.get("exp"));
+
+        
     }
-    public HashMap<String, String> getSaveData(){
-        return saveData;
-    }
+
+    
 }

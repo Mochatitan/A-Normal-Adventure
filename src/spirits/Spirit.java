@@ -1,4 +1,4 @@
-package game;
+package spirits;
 
 import java.util.ArrayList;
 import java.util.Arrays;

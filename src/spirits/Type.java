@@ -1,4 +1,4 @@
-package game;
+package spirits;
 
 public interface Type{
 
