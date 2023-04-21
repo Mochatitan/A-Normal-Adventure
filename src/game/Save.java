@@ -11,10 +11,26 @@ public class Save {
     static HashMap<String, String> saveData = new HashMap<String, String>();
     static ArrayList<String> lineList = new ArrayList<String>();
 
+    //static variables
+    public static String get(String keyWord){
+         return Save.saveData.get(keyWord);
+    }
+    public static int getInt(String keyWord){
+         return String.toString(Save.saveData.get(keyWord));
+    }
+    public static void set(String keyWord, String value){
+         Save.saveData.set(keyWord, value);
+    }
+    public static void set(String keyWord, int value){
+         Save.saveData.set(keyWord, String.toString(value));
+    }
+    
     private static File file = new File("../data/save/Save.txt");
     // saveData.put("this","isthis");
-    
-    private static void load(){
+    public static void save(){
+        
+    }
+    public static void load(){
         Save.saveData.clear();
         Save.lineList.clear();
         try {
@@ -42,6 +58,6 @@ public class Save {
 
         
     }
-
     
+
 }
