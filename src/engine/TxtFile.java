@@ -1,15 +1,16 @@
 package engine;
 
 public class TxtFile{ 
-    private File file;
     public TxtFile(String filePath){
-         file = new File("../data/save/Save.txt");
+         String directory = filePath;
     }
     
     public void push(HashMap<String, String> hashmap){
         //TODO 
     }
-    public HashMap<String, String> load(){
+    
+    public HashMap<String, String> load(String fileName){ 
+        File file = new File(directory+"/"+fileName);
         HashMap<String, String> saveData = new HashMap<String, String>();
         ArrayList<String> lineList = new ArrayList<String>(); 
         try {
