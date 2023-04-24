@@ -17,20 +17,36 @@ protected int defense;
 protected double height;
 protected double weight;
 protected double size;
-
-protected Personality personality;
   
 protected int level;
-protected double totalExp;
-protected double exp;
-protected ArrayList<Double> expRequirements = new ArrayList<Double>();
-  
+protected int exp;
   
 public Spirit(){
-loadVariables();
+loadName();
 }
   
+private void loadName(){
+this.name = this.getClass().getSimpleName();
+} 
+  
 //getters and setters
+public int getHealth(){
+  return health;
+}
+public int getMaxHealth(){
+return maxHealth;
+}
+public int getDamage(){
+return damage
+}
+public int getDefense(){
+return defense;
+}
+public boolean takeDamage(int damage){
+this.health -= damage;
+if(health <= 0){return false;}
+return true;
+}
 public String getName(){
 return name;
 }
@@ -49,34 +65,8 @@ level += levelsAdded;
 public void levelUp(){
 level++;
 }
-private int calculateLevel(){
-while(exp > expRequirements.get(level)){
-exp -= expRequirements.get(level);
-level++;
-}
-return level;
-}
+public void calculateDamage(Spirit SpiritAttacked, Attack attackUsed){
 
-//loaders
-private void loadVariables(){
-loadExpRequirement();
-loadInformation();
-}
-  
-private void loadExpRequirement(){
-//expRequirement = new ArrayList<int>(Arrays.asList(0,2,3,4,4,5,7,));
-double xpReq = 1;
-for(double x = 0; x < 98;x+=0.5){
-expRequirements.add(xpReq);
-xpReq += x;
-}
-}
-
-private void loadInformation(){
-this.name = this.getClass().getSimpleName();
-}
-  
-private void randomizeStats(){
 
 }
 
