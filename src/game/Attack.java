@@ -8,5 +8,6 @@ protected int maxUses;
 protected Type type;
 protected String name = this.getClass().getSimpleName();
 protected String description;
-
+Attack(){
+uses = maxUses;
 }
