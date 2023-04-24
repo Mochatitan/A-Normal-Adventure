@@ -20,11 +20,16 @@ protected double size;
   
 protected int level;
 protected int exp;
+
+protected Attack attack1;
+protected Attack attack2;
+protected Attack attack3;
+protected Attack attack4;
   
 public Spirit(){
 loadName();
 }
-  
+public Spirit(String name, int damage, int hp, int defense, Type type){}
 private void loadName(){
 this.name = this.getClass().getSimpleName();
 } 
@@ -65,10 +70,7 @@ level += levelsAdded;
 public void levelUp(){
 level++;
 }
-public void calculateDamage(Spirit SpiritAttacked, Attack attackUsed){
 
-
-}
 
 
 }
