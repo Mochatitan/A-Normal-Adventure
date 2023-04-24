@@ -4,7 +4,9 @@ import javax.swing.*;
 
 
 public class Battle extends JFrame{
-
+  public Spirit spirit1;
+  public Spirit spirit2;
+  
   public Battle(){
     initUI();
   }
