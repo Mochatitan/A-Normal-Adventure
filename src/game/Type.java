@@ -1,7 +1,7 @@
 package game;
 
 public enum Type{
-FIRE,WATER,GRASS
+FIRE,WATER,GRASS,NORMAL
 
 
 }
