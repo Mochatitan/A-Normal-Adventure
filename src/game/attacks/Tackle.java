@@ -1,4 +1,4 @@
-package game;
+package game.attacks;
 
 public class Tackle extends Attack{
 
