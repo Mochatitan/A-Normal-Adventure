@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class Spirit{
+public class Spirit{
   
 protected String name;
 protected int index;
@@ -29,7 +29,22 @@ protected Attack attack4;
 public Spirit(){
 loadName();
 }
-public Spirit(String name, int damage, int hp, int defense, Type type){}
+public Spirit(String name, int damage, int hp, int defense, Type type){
+  this.name = name;
+  this.damage = damage;
+  this.health = hp;
+  this.maxHealth = hp;
+  this.defense = defense;
+  this.type = type;
+  
+  this.level = 1;
+  this.exp = 0;
+  
+  this.attack1 = new Tackle();
+  this.attack2 = new Fireball();
+  this.attack3 = new Splash();
+  this.attack4 = new Headbutt();
+}
 private void loadName(){
 this.name = this.getClass().getSimpleName();
 } 
