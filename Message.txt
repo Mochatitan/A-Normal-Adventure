@@ -1,0 +1,2 @@
+check out Pokeapi, we can use some of the json files for examples.
+ill add a json file with the first 9 pokemon in it.
