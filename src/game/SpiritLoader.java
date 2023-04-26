@@ -1,4 +1,4 @@
-package spirits;
+package game;
 import java.io.File;
 // Import Jackson json databind/core
 //Import HashMap
