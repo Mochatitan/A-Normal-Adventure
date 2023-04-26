@@ -3,3 +3,4 @@ ill add a json file with the first 9 pokemon in it.
 
 also this seems interesting but its in kotlin 
 https://github.com/PokeAPI/pokekotlin
+it still works for java actually, can you try to figure out how to install it? i think we should start fresh in regards to "pokemon" and use this tool to make it easier.
