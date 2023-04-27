@@ -22,7 +22,7 @@ public class SpiritLoader {
     private PokeApi pokeApi = new PokeApiClient();
 
     public void generateFiles() throws IOException {
-        for (int i = 1; i < 5 + 2; i++) {
+        for (int i = 1; i <= 9; i++) {
             Pokemon pokemon = pokeApi.getPokemon(i);
 
             JSONObject obj = new JSONObject();
