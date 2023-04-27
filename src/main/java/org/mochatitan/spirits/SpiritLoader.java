@@ -5,16 +5,11 @@ import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
 import me.sargunvohra.lib.pokekotlin.model.Pokemon;
 import me.sargunvohra.lib.pokekotlin.model.PokemonSprites;
-import me.sargunvohra.lib.pokekotlin.model.PokemonType;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 
 public class SpiritLoader {
 
@@ -22,20 +17,45 @@ public class SpiritLoader {
     private PokeApi pokeApi = new PokeApiClient();
 
     public void generateFiles() throws IOException {
+
+        JSONObject obj = new JSONObject();
+
         for (int i = 1; i < 5 + 2; i++) {
             Pokemon pokemon = pokeApi.getPokemon(i);
 
-            JSONObject obj = new JSONObject();
-            obj.put("name", pokemon.getName());
-            obj.put("id", pokemon.getId());
-            obj.put("height", pokemon.getHeight());
+            JSONObject tempObj = new JSONObject();
+            tempObj.put("id", pokemon.getId());
+            tempObj.put("name", pokemon.getName());
+            tempObj.put("height", pokemon.getHeight());
+
+            obj.put(pokemon.getName(), tempObj);
+
 
             PokemonSprites sprite = pokemon.getSprites();
-            String imgURL = sprite.getFrontDefault();
+            downloadSprite(pokemon.getName(), sprite.getFrontDefault());
+            downloadSprite(pokemon.getName() + "-back", sprite.getBackDefault());
+        }
+        writeFile(obj);
+    }
 
+    public void writeFile(JSONObject obj) {
+        try {
+
+            FileWriter file = new FileWriter("src//main//resources//SpiritData//pokemonData.json");
+            System.out.println("Loaded File");
+            file.write(obj.toJSONString());
+            file.flush();
+            file.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void downloadSprite(String fileName, String imgURL) {
+        try {
             URL url = new URL(imgURL);
             InputStream in = new BufferedInputStream(url.openStream());
-            System.out.println("Stream Opened");
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             byte[] buf = new byte[1024];
             int n = 0;
@@ -47,25 +67,14 @@ public class SpiritLoader {
             in.close();
             byte[] response = out.toByteArray();
 
-            FileOutputStream fos = new FileOutputStream("src//main//resources//SpiritSprites//" + pokemon.getName() + ".png");
+            FileOutputStream fos = new FileOutputStream("src//main//resources//SpiritSprites//" + fileName + ".png");
             fos.write(response);
             fos.close();
-            System.out.println("File Wrote");
-
-            try {
-
-                FileWriter file = new FileWriter("src//main//resources//SpiritData//" + pokemon.getName() + ".json");
-                System.out.println("Loaded File");
-                file.write(obj.toJSONString());
-                file.flush();
-                file.close();
-
-            } catch (IOException e) {
-                System.out.println("Could not find path");
-            }
-
-
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        System.exit(0);
+
     }
 }

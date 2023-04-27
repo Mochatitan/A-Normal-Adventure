@@ -1,0 +1,32 @@
+{
+  "bulbasaur": {
+    "name": "bulbasaur",
+    "id": 1,
+    "height": 7
+  },
+  "charmeleon": {
+    "name": "charmeleon",
+    "id": 5,
+    "height": 11
+  },
+  "venusaur": {
+    "name": "venusaur",
+    "id": 3,
+    "height": 20
+  },
+  "charizard": {
+    "name": "charizard",
+    "id": 6,
+    "height": 17
+  },
+  "charmander": {
+    "name": "charmander",
+    "id": 4,
+    "height": 6
+  },
+  "ivysaur": {
+    "name": "ivysaur",
+    "id": 2,
+    "height": 10
+  }
+}
