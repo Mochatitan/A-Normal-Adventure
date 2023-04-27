@@ -13,7 +13,7 @@ import javax.swing.Timer;
 import javax.swing.JPanel;
 
 public class GameCycle extends JPanel implements KeyListener, ActionListener {
-    static String scene = "TitleScreen";
+    public String scene = "TitleScreen";
     private Timer timer;
     private static final int DELAY = 10;
 
@@ -24,10 +24,12 @@ public class GameCycle extends JPanel implements KeyListener, ActionListener {
         timer = new Timer(DELAY, this);
         timer.start();
     }
-
+    public void tick(){
+    //runs every DELAY milliseconds
+    }
     public void paint(Graphics g){
         Graphics2D g2d = (Graphics2D)g;
-        switch(GameCycle.scene){
+        switch(scene){
 
         }
         g.dispose();
@@ -35,7 +37,7 @@ public class GameCycle extends JPanel implements KeyListener, ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e){
-
+        tick();
         repaint();
     }
     @Override
