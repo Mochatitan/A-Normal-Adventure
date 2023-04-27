@@ -1,0 +1,9 @@
+{
+"attack-type":"physical",
+"name": "tackle",
+"type": ["NORMAL"],
+"accuracy": 100,
+"power": 40,
+"pp" :35
+
+}
