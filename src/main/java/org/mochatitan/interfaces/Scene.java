@@ -1,4 +1,4 @@
-package org.mochatitan.game;
+package org.mochatitan.interfaces;
 
 import java.awt.*;
 
