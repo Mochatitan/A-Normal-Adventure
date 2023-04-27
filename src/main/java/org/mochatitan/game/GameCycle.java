@@ -11,12 +11,18 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.Timer;
 import javax.swing.JPanel;
-
+//scenes
+/*
+TITLESCREEN,BATTLE,LOADING_BATTLE,WALKING,CUTSCENE_01,SETTINGS
+*/
 public class GameCycle extends JPanel implements KeyListener, ActionListener {
-    public String scene = "TitleScreen";
+    public static String scene = "TITLESCREEN";
     private Timer timer;
     private static final int DELAY = 10;
 
+    private Trainer player;
+    private Battle battle;
+    
     public GameCycle() {
         addKeyListener(this);
         setFocusable(true);
@@ -26,11 +32,32 @@ public class GameCycle extends JPanel implements KeyListener, ActionListener {
     }
     public void tick(){
     //runs every DELAY milliseconds
+        switch(scene){
+            case "TITLESCREEN":
+                
+                break;
+            case "BATTLE":
+                battle.tick();
+                
+                break;
+            case "LOADING_BATTLE":
+                battle.loadingTick();
+                
+                break;
+        }
     }
     public void paint(Graphics g){
         Graphics2D g2d = (Graphics2D)g;
         switch(scene){
-
+            case "TITLESCREEN":
+                
+                break;
+            case "BATTLE":
+                battle.draw(g2d);
+                break;
+            case "LOADING_BATTLE":
+                battle.loadingDraw(g2d);
+                break;
         }
         g.dispose();
     }
@@ -52,5 +79,9 @@ public class GameCycle extends JPanel implements KeyListener, ActionListener {
     public void keyPressed(KeyEvent e){
         //System.out.println("keyPressed: " + e.getKeyCode());
 
+    }
+    public void loadWildPokemonBattle(Pokemon pokemon){
+        battle = new Battle(player,pokemon);
+        scene = Scene.LOADING_BATTLE;
     }
 }
