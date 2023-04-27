@@ -1,32 +1,120 @@
 {
   "bulbasaur": {
+    "abilities": [
+      "overgrow",
+      "chlorophyll"
+    ],
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "special-attack": 65,
+    "defense": 49,
+    "attack": 49,
     "name": "bulbasaur",
+    "hp": 45,
+    "weight": 69,
     "id": 1,
+    "special-defense": 65,
+    "speed": 45,
     "height": 7
   },
   "charmeleon": {
+    "abilities": [
+      "blaze",
+      "solar-power"
+    ],
+    "types": [
+      "fire"
+    ],
+    "special-attack": 80,
+    "defense": 58,
+    "attack": 64,
     "name": "charmeleon",
+    "hp": 58,
+    "weight": 190,
     "id": 5,
+    "special-defense": 65,
+    "speed": 80,
     "height": 11
   },
   "venusaur": {
+    "abilities": [
+      "overgrow",
+      "chlorophyll"
+    ],
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "special-attack": 100,
+    "defense": 83,
+    "attack": 82,
     "name": "venusaur",
+    "hp": 80,
+    "weight": 1000,
     "id": 3,
+    "special-defense": 100,
+    "speed": 80,
     "height": 20
   },
   "charizard": {
+    "abilities": [
+      "blaze",
+      "solar-power"
+    ],
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "special-attack": 109,
+    "defense": 78,
+    "attack": 84,
     "name": "charizard",
+    "hp": 78,
+    "weight": 905,
     "id": 6,
+    "special-defense": 85,
+    "speed": 100,
     "height": 17
   },
   "charmander": {
+    "abilities": [
+      "blaze",
+      "solar-power"
+    ],
+    "types": [
+      "fire"
+    ],
+    "special-attack": 60,
+    "defense": 43,
+    "attack": 52,
     "name": "charmander",
+    "hp": 39,
+    "weight": 85,
     "id": 4,
+    "special-defense": 50,
+    "speed": 65,
     "height": 6
   },
   "ivysaur": {
+    "abilities": [
+      "overgrow",
+      "chlorophyll"
+    ],
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "special-attack": 80,
+    "defense": 63,
+    "attack": 62,
     "name": "ivysaur",
+    "hp": 60,
+    "weight": 130,
     "id": 2,
+    "special-defense": 80,
+    "speed": 60,
     "height": 10
   }
 }

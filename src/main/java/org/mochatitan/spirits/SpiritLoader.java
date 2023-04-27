@@ -3,13 +3,15 @@ package org.mochatitan.spirits;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.sargunvohra.lib.pokekotlin.client.PokeApi;
 import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
-import me.sargunvohra.lib.pokekotlin.model.Pokemon;
-import me.sargunvohra.lib.pokekotlin.model.PokemonSprites;
+import me.sargunvohra.lib.pokekotlin.model.*;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import retrofit2.Call;
 
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 public class SpiritLoader {
 
@@ -24,19 +26,46 @@ public class SpiritLoader {
             Pokemon pokemon = pokeApi.getPokemon(i);
 
             JSONObject tempObj = new JSONObject();
+
+            // Get Basic Info
             tempObj.put("id", pokemon.getId());
             tempObj.put("name", pokemon.getName());
             tempObj.put("height", pokemon.getHeight());
+            tempObj.put("weight", pokemon.getWeight());
 
+            // Get Type
+            List<PokemonType> types = pokemon.getTypes();
+            JSONArray pokeTypes = new JSONArray();
+            for (PokemonType type : types) {
+                pokeTypes.add(type.getType().getName());
+            }
+            tempObj.put("types", pokeTypes);
+
+            // Get Abilities and their details - Ability Stats will be halted until this can be figured out
+            List<PokemonAbility> abilities = pokemon.getAbilities();
+            JSONArray jsonAbilities = new JSONArray();
+            for (PokemonAbility ability : abilities) {
+                jsonAbilities.add(ability.getAbility().getName());
+            }
+            tempObj.put("abilities", jsonAbilities);
+
+
+            // Get Stats
+            List<PokemonStat> stats = pokemon.getStats();
+            for (PokemonStat stat : stats) {
+                tempObj.put(stat.getStat().getName(), stat.getBaseStat());
+            }
             obj.put(pokemon.getName(), tempObj);
 
 
+            // Get Sprites
             PokemonSprites sprite = pokemon.getSprites();
             downloadSprite(pokemon.getName(), sprite.getFrontDefault());
             downloadSprite(pokemon.getName() + "-back", sprite.getBackDefault());
         }
         writeFile(obj);
     }
+
 
     public void writeFile(JSONObject obj) {
         try {
