@@ -1,5 +1,9 @@
 package org.mochatitan.game;
 
+import me.sargunvohra.lib.pokekotlin.model.Pokemon;
+import me.sargunvohra.lib.pokekotlin.client.PokeApi;
+import me.sargunvohra.lib.pokekotlin.client.PokeApiClient;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -19,11 +23,13 @@ public class GameCycle extends JPanel implements KeyListener, ActionListener {
     public static String scene = "TITLESCREEN";
     private Timer timer;
     private static final int DELAY = 10;
+    private PokeApi pokeApi = new PokeApiClient();
 
     private Trainer player;
     private Battle battle;
-    
+   
     public GameCycle() {
+        player = new Trainer("player1", pokeApi.getPokemon(4));
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(true);
