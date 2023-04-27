@@ -15,6 +15,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.Timer;
 import javax.swing.JPanel;
+import java.util.ArrayList;
+
 //scenes
 /*
 TITLESCREEN,BATTLE,LOADING_BATTLE,WALKING,CUTSCENE_01,SETTINGS
